@@ -6,7 +6,7 @@
 <br>
 <br>
 
-                                                Completed: 9 / 108
+                                                Completed: 12 / 108
 
 I've made this repository to store my solutions to Exercism's Javascript Track, which i work on my free time to practice my problem solving skills and develop my mastery over the fundaments of the language.
 
