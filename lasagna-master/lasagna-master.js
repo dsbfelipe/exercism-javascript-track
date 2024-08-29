@@ -26,8 +26,8 @@ export function preparationTime(layers, averageTimePerLayer = 2) {
 }
 
 export function quantities(layers) {
-  const noodles = layers.filter('noodles').length * 50;
-  const sauce = layers.filter('sauce').length * 0.2;
+  const noodles = layers.filter(layer => layer === 'noodles').length * 50;
+  const sauce = layers.filter(layer => layer === 'sauce').length * 0.2;
   return {
     noodles: noodles,
     sauce: sauce,
@@ -39,10 +39,10 @@ export function addSecretIngredient(friendsList, myList) {
 }
 
 export function scaleRecipe(recipe, portions) {
-  const scaledRecipe = {...recipe}
-  for (const key in scaledRecipe) {
-    scaledRecipe[key] * portions;
-  }
-
+  const recipeCopy = {...recipe}
+  const scaledRecipe = Object.fromEntries(
+    Object.entries(recipeCopy).map(([key, value]) => [key, (value / 2 * portions)])
+  )
+  console.log(scaleRecipe)
   return scaledRecipe;
 }
